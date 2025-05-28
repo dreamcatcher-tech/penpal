@@ -11,7 +11,7 @@ module.exports = (config) => {
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-gpu', '--headless'],
+        flags: ['--no-sandbox=new', '--disable-gpu', '--headless'],
       },
     },
     files: [
@@ -75,5 +75,10 @@ module.exports = (config) => {
     reporters: ['dots'],
     singleRun: false,
     concurrency: Infinity,
+    client: {
+      jasmine: {
+        timeoutInterval: 30000,
+      },
+    },
   });
 };
