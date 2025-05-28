@@ -80,5 +80,6 @@ module.exports = (config) => {
         timeoutInterval: 60000,
       },
     },
+    browserNoActivityTimeout: 60000,
   });
 };
