@@ -11,7 +11,12 @@ module.exports = (config) => {
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-gpu', '--headless'],
+        flags: [
+          '--no-sandbox',
+          '--disable-gpu',
+          '--headless=new',
+          '--disable-dev-shm-usage',
+        ],
       },
     },
     files: [
@@ -69,12 +74,12 @@ module.exports = (config) => {
     },
     frameworks: ['jasmine'],
     colors: true,
-    logLevel: config.LOG_INFO,
-    // logLevel: config.LOG_DEBUG,
+    // logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     reporters: ['dots'],
     singleRun: false,
-    concurrency: 1,
+    concurrency: Infinity,
     client: {
       jasmine: {
         timeoutInterval: 60000,
