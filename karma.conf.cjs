@@ -74,7 +74,7 @@ module.exports = (config) => {
     autoWatch: true,
     reporters: ['dots'],
     singleRun: false,
-    concurrency: Infinity,
+    concurrency: 1,
     client: {
       jasmine: {
         timeoutInterval: 30000,
