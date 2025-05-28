@@ -3,11 +3,17 @@ const typescript = require('@rollup/plugin-typescript');
 module.exports = (config) => {
   config.set({
     browsers: [
-      'Chrome',
+      'ChromeHeadlessNoSandbox',
       // 'Firefox',
       // 'Edge',
       // 'Safari'
     ],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu', '--headless'],
+      },
+    },
     files: [
       {
         pattern: 'test/childFixtures/{pages,workers}/**',
