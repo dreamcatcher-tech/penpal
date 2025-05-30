@@ -3,7 +3,8 @@ const typescript = require('@rollup/plugin-typescript');
 module.exports = (config) => {
   config.set({
     browsers: [
-      'Chrome',
+      'ChromeHeadless',
+      // 'Chrome',
       // 'Firefox',
       // 'Edge',
       // 'Safari'
